@@ -9,23 +9,14 @@ pipeline {
     }
     
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/AtharvaNawathe/Sample-node.git'
-            }
-        }
         stage('Install dependencies') {
             steps {
-                
                 sh 'npm install'
             }
         }
         stage('Run application') {
             steps {
-                
                 sh 'node app.js &'
-               
-                sleep 10
             }
         }
     }
