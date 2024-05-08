@@ -28,11 +28,6 @@ pipeline {
                 sleep 10
             }
         }
-        stage('Deploy') {
-            steps {
-                // Example: sh 'npm start'
-            }
-        }
     }
     post {
         always {
