@@ -1,9 +1,9 @@
 pipeline {
     agent {
         docker {
-            // Use the official Node.js Docker image with tag '16-alpine'
+            
             image 'node:16-alpine'
-            // Mount the Docker socket so Docker commands can be executed within the container
+            args '-u node'
             args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Install dependencies') {
             steps {
-                sh 'npm install express'
+                sh 'npm install'
             }
         }
         stage('Run application') {
