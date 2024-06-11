@@ -11,7 +11,6 @@ pipeline {
     stages {
         stage('Install dependencies') {
             steps {
-                sh 'npm config set cache /home/node/.npm-cache --global'
                 sh 'npm install'
             }
         }
